@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Звʼяжіться з нами – Звʼязок з командою порталу IndigoKids</title>
+        <meta name="description" content="Ваша думка надзвичайно важлива для нас! Зв'яжіться з командою IndigoKids, щоб залишити свій відгук, поділитись ідеєю нового курсу або повідомити про помилку.">
+    </head>
+    <body>
+        <header>
+            <a href="main-page.html"><img src="images/indigo-kids-logo.png" alt="IndigoKids logo" width="150"></a>
+            <h1>Звʼяжіться з нами!</h1>
+            <nav>
+                <ul>
+                    <li><a href="our-courses.html">Навчальні матеріали</a></li>
+                    <li><a href="user-feedback.html">Зворотній зв’язок</a></li>
+                </ul>
+            </nav>
+            <button>Перейти у власний кабінет</button>
+            <button>Зареєструватися</button>
+        </header>
+        <main>
+            <h2>Форма зворотнього звʼязку</h2>
+            <p>Ми цінуємо ваші думки! Заповніть форму нижче, щоб поділитися пропозиціями або повідомити про проблему.</p>
+            
+            <form action="user-feedback.html" method="POST">
+                <fieldset>
+                    <legend>Персональна інформація</legend>
+                    <label for="fullName">Прізвище та імʼя батьків:</label>
+                    <input type="text" name="fullName" id="fullName" placeholder="Григоренко Єлизавета">
+                    <label for="email">E-mail батьків:</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                    <label for="childAge">Вік дитини:</label>
+                    <input type="number" name="childAge" id="childAge" placeholder="10" min="2">
+                    <label for="childGender">Стать дитини:</label>
+                    <select name="childGender" id="childGender">
+                        <option value="none" selected>-</option>
+                        <option value="male">Хлопчик</option>
+                        <option value="female">Дівчинка</option>
+                    </select>
+                </fieldset>
+                <label for="purpose">Мета зворотнього зв’язку:</label>
+                <select id="purpose" name="purpose">
+                    <option value="collaboration">Співпраця</option>
+                    <option value="complaint">Скарга на неякісний контент</option>
+                    <option value="suggestion">Пропозиція</option>
+                    <option value="error">Технічна помилки</option>
+                </select>
+                <label for="feedback">Детальна інформація:</label>
+                <textarea name="feedback" id="feedback" rows="6" cols="50" maxlength="500"></textarea>
+                <label for="agreement">Погоджуюся на обробку інформації</label>
+                <input type="checkbox" name="agreement" id="agreement">
+                <button type="submit">Надіслати відгук</button>
+            </form>
+        </main>
+        <footer>
+            <h2>Контакти</h2>
+            <address>
+                <p>Навчальний портал "IndigoKids"</p>
+                <p>
+                    Вул. Освіти, 12, офіс 34<br>
+                    м. Київ, 03037, Україна
+                </p>
+                <p>
+                    З загальних питань: <br>
+                    <a href="tel:+380991234567">+38 (099) 123-45-67</a>
+                </p>
+                <p>
+                    Технічна підтримка: <br>
+                    <a href="tel:+380671234567">+38 (067) 123-45-67</a>
+                </p>
+            </address>
+            <h2>Корисні ресурси</h2>
+            <ul>
+                <li>
+                    <a href="https://mon.gov.ua/" target="_blank">Міністерство освіти і науки України</a>
+                </li>
+                <li>
+                    <a href="https://osvita.diia.gov.ua/" target="_blank">Дія.Освіта</a>
+                </li>
+            </ul>
+            <p>&copy; 2025 IndigoKids. Всі права захищено.</p>
+        </footer>
+    </body>
+</html>
