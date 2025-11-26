@@ -9,24 +9,15 @@ window.onload = function() {
 
     function checkTimeAndSetTheme() {
         let currentHour = new Date().getHours(); 
-        
         let dayTime = currentHour >= 6 && currentHour < 21;
 
         let body = document.body;
-        let footer = document.getElementById('footer');
-        let titleContainer = document.getElementById('title-background');
-        
         if (dayTime) {
-            body.style.backgroundColor = 'hsl(38, 50%, 98%)';
-            header.style.backgroundColor = 'hsl(0, 0%, 100%)';
-            footer.style.backgroundColor = 'hsl(0, 0%, 100%)'; 
-            titleContainer.style.backgroundColor = 'hsl(0, 0%, 100%, 0.8)';
-
+            body.style.filter = "brightness(100%)";
+            body.style.backgroundColor = "hsla(36, 100%, 98%, 1.00)"; 
         } else {
-            body.style.backgroundColor = 'hsl(38, 50%, 58%)';
-            header.style.backgroundColor = 'hsl(0, 0%, 60%)';
-            footer.style.backgroundColor = 'hsl(0, 0%, 60%)';
-            titleContainer.style.backgroundColor = 'hsl(0, 0%, 60%, 0.8)';
+            body.style.filter = "brightness(60%)";
+            body.style.backgroundColor = "hsla(0, 0%, 58%, 1.00)"; 
         }
     }
     checkTimeAndSetTheme();

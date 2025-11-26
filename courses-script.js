@@ -1,10 +1,10 @@
 window.onload = function() {
-    const accNames = document.getElementsByClassName("accordion-name");
+    let accNames = document.getElementsByClassName("accordion-name");
     for (let i = 0; i < accNames.length; i++) {
         
         accNames[i].onclick = function() {
             this.classList.toggle("active-accordion");
-            const description = this.nextElementSibling;
+            let description = this.nextElementSibling;
             if (description.style.maxHeight) {
                 description.style.maxHeight = null; 
             } else {
