@@ -47,6 +47,18 @@ header {
 
     background-color: #ffffff;
     position: relative;
+    overflow: hidden;
+}
+
+header * {
+    z-index: 2;
+}
+
+.falling-toy {
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    opacity: 0.3;
 }
 .image-logo {
     position: absolute;
@@ -151,6 +163,9 @@ aside {
 
     transition: all 0.3s ease;
 }
+#what-we-offer:hover {
+    transform: translateX(2vw);
+}
 .offers-description::first-letter {
     font-size: 2rem;
     color: rgb(21, 110, 33);
@@ -159,9 +174,6 @@ aside {
 .offers-table {
     overflow-x: auto;
     max-width: 90vw;
-}
-#what-we-offer:hover {
-    transform: translateX(2vw);
 }
 #user-feedback {
     margin-inline: 20px;
@@ -191,6 +203,78 @@ img[src*='images/user-feedbacks']:hover {
     100% {
         transform: scale(1);
     }
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.author-card {
+    width: 220px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background-color: #fff;
+    position: relative;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-name-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-back {
+    background-color: #f0ab44;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: none; 
+}
+
+.author-role { 
+    font-style: italic; 
+}
+.author-quote { 
+    font-weight: 600; 
+}
+.card-front > *,
+.card-back > * {
+    min-width: 220px;
+    box-sizing: border-box;
 }
 
 .user-feedback-text {
@@ -296,6 +380,38 @@ a[target] {
     color:rgb(103, 12, 12)
 }
 
+.accordion-wrapper {
+    max-width: 400px;
+    margin: 20px;
+}
+.accordion-name {
+    margin-block: 5px;
+    background-color: #fff8e1;
+    color: #444;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+.active-accordion, .accordion-name:hover {
+    background-color: hsl(36, 85%, 60%);
+    color: white;
+}
+.accordion-description {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-description p {
+    font-size: 15px;
+    color: #555;
+}
+
 @media (max-width: 870px) {
     header {
         grid-template-columns: 1fr 1fr; 
@@ -303,7 +419,6 @@ a[target] {
         justify-items: center; 
         padding-left: 15px;
         padding-right: 15px;
-        position: static; 
         gap: 20px;
     }
     .image-logo {
@@ -380,6 +495,14 @@ a[target] {
     }
     .list-image {
         width: 300px;
+    }
+    .accordion-wrapper {
+        max-width: 100%;
+        margin: 0;
+    }
+    .accordion-name {
+        border-radius: 0;
+        box-sizing: border-box;
     }
 }
 @media (max-width: 520px) {

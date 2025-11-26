@@ -9,25 +9,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
+        <script src="main-page-script.js"></script>
     </head>
     <body>
-        <header>
+        <header id="header-animation">
             <img class="image-logo" src="images/indigo-kids-logo.png" alt="IndigoKids logo" width="150">
             <nav class="page-navigation">
                 <ul>
-                    <li class="header-menu-trigger">
-                        <a href="our-courses.html">Навчальні матеріали</a>
-                        <ul class="hidden-header-menu">
-                            <li>
-                                <a href="our-courses.html">Світ науки і досліджень</a>
-                            </li>
-                            <li>
-                                <a href="our-courses.html">Логіка та програмування</a>
-                            </li>
-                            <li>
-                                <a href="our-courses.html">Творча майстерня</a>
-                            </li>
-                        </ul>
+                    <li><a href="our-courses.html">Навчальні матеріали</a>
                     </li>
                     <li><a href="user-feedback.html">Зворотній зв’язок</a></li>
                 </ul>
@@ -39,8 +28,8 @@
         </header>
         <main>
             <div class="title-container">
-                <div class="visible-text-container">
-                        <h1 class="page-title">Навчальний портал IndigoKids</h1>
+                <div class="visible-text-container" id="title-background">
+                        <h1 class="page-title" id="page-title-text">Навчальний портал IndigoKids</h1>
                 </div>
             </div>
             <div class="content-container">
@@ -51,6 +40,7 @@
                             <li><a href="#our-goal">Наша мета</a></li>
                             <li><a href="#what-we-offer">Що ми пропонуємо</a></li>
                             <li><a href="#user-feedback">Відгуки користувачів</a></li>
+                            <li><a href="#our-authors">Автори</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -154,6 +144,44 @@
                             </table>
                         </div>
                     </section>
+                    <section id="our-authors">
+                        <h2>Автори наших курсів</h2>
+                        <div class="authors-grid">
+                            <div class="author-card">
+                                <div class="card-front">
+                                    <img src="images/authors/Maria.jpg" alt="Марія Ткачук">
+                                    <div class="author-name-overlay">Марія Ткачук</div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>Марія Ткачук</h3>
+                                    <p class="author-role">Викладач "Веселої науки"</p>
+                                    <p class="author-quote">"Наука — це не нудні формули, а магія, яку ми можемо зрозуміти!"</p>
+                                </div>
+                            </div>
+                            <div class="author-card">
+                                <div class="card-front">
+                                    <img src="images/authors/Alexey.jpg" alt="Олексій Бондар">
+                                    <div class="author-name-overlay">Олексій Бондар</div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>Олексій Бондар</h3>
+                                    <p class="author-role">Ментор з логіки</p>
+                                    <p class="author-quote">"Кожна складна задача — це просто цікавий пазл, який чекає на розгадку."</p>
+                                </div>
+                            </div>
+                            <div class="author-card">
+                                <div class="card-front">
+                                    <img src="images/authors/Iren.jpg" alt="Ірина Ярмоленко">
+                                    <div class="author-name-overlay">Ірина Ярмоленко</div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>Ірина Ярмоленко</h3>
+                                    <p class="author-role">Керівник "Творчої майстерні"</p>
+                                    <p class="author-quote">"Уява важливіша за знання, бо знання обмежені, а уява — безмежна."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </article>
                 <article id="user-feedback">
                     <h2>Що кажуть про нас батьки</h2>
@@ -181,7 +209,7 @@
                 </article>
             </div>
         </main>
-        <footer class="footer-container">
+        <footer class="footer-container" id="footer">
             <div class="footer-contacts" tabindex="0">
                 <h2>Контакти</h2>
                 <address>

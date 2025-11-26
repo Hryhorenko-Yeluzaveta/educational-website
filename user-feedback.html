@@ -196,6 +196,36 @@
             text-align: center;
             color: #777;
         }
+        .tooltip-container {
+            position: relative;
+        }
+        .textarea-active {
+            background-color: #fffaeb; 
+            border: 2px solid #f0ab44 !important;
+            box-shadow: 0 4px 10px rgba(240, 171, 68, 0.5);
+            transition: all 0.3s ease;
+        }
+        .tooltip-box {
+            position: absolute;
+            left: calc(100% + 15px); 
+            top: 0;
+            width: 200px;
+            padding: 12px;
+            background-color: #f0ab44;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100; 
+        }
+        @media (max-width: 850px) {
+            .tooltip-box {
+                left: auto;
+                right: 0;
+                top: -50%;
+            }
+        }
     </style>
     </head>
     <body>
@@ -247,7 +277,9 @@
                     <option value="error">Технічна помилки</option>
                 </select>
                 <label for="feedback">Детальна інформація:</label>
-                <textarea name="feedback" id="feedback" rows="6" cols="50" maxlength="500"></textarea>
+                <div class="tooltip-container" id="tooltip-container">
+                    <textarea name="feedback" id="feedback" rows="6" cols="50" maxlength="500"></textarea>
+                </div>
                 <div class="checkbox-container">
                     <input type="checkbox" name="agreement" id="agreement">
                     <label for="agreement">Погоджуюся на обробку інформації</label>
@@ -287,5 +319,24 @@
             </div>
             <p class="copyright">&copy; 2025 IndigoKids. Всі права захищено.</p>
         </footer>
+        <script>
+            window.onload = function() {
+                let textarea = document.getElementById('feedback');
+                let tooltipWrapper = document.getElementById('tooltip-container');         
+                let tooltip = document.createElement('div');
+                tooltip.innerText = "Ваша думка для нас важлива! Конкретизуйте мету звернення, будь ласка";
+                tooltip.classList.add('tooltip-box');
+                tooltip.style.display = 'none';
+                tooltipWrapper.appendChild(tooltip);
+                textarea.onmouseover = function() {
+                    textarea.classList.add('textarea-active');
+                    tooltip.style.display = 'block';
+                };
+                    textarea.onmouseout = function() {
+                    textarea.classList.remove('textarea-active');
+                    tooltip.style.display = 'none';
+                };
+            }
+        </script>
     </body>
 </html>
